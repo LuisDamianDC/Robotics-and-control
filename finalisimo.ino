@@ -94,9 +94,9 @@ void medicion(){ //función para medir distancias con el sensor ultrasónico
 
 void loop() {//En el ciclo sin fin
   medicion();//hacemos el ciclo de medición
-  sderecha=(digitalRead(A3));
-  scentro=(digitalRead(A4));
-  sizquierda=(digitalRead(A2));
+  sderecha=(digitalRead(A3)); //lectura del sensor derecho
+  scentro=(digitalRead(A4)); //lectura del sensor central
+  sizquierda=(digitalRead(A2)); //lectura del sensor izquierdo
   if(scentro and !sizquierda and !sderecha) adelante(); //si la del centro tiene la linea, avanza hacia adelante
   else if (sizquierda and !scentro and !sderecha) izquierda(); //si la linea está a la derecha, gira a la izquierda
   else if (!sizquierda and !scentro and sderecha) derecha(); //si la linea está a la izquierda, gira a la derecha
